@@ -8,10 +8,10 @@ const Layout = ({ children }) => {
     <>
       <NavigationBar />
       <main>{children}</main>
-      <div className="flex flex-col gap-4 ">
+      <footer className=" ">
         <FeaturesSection />
         <Footer />
-      </div>
+      </footer>
     </>
   );
 };

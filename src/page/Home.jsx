@@ -34,7 +34,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="relative h-full">
+      <div className="relative h-full mb-5">
         <img src={fashion} alt="" className="w-full  object-cover" />
         <div className=" gap-5 absolute text-right right-4 top-1/4 md:right-16 md:top-1/2 transform-translate-y-1/2 text-zinc-300  py-2 px-4 text-sm font-semibold">
           <h1 className="text-right text-[8px] md:text-sm font-extralight ">

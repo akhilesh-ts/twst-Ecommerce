@@ -19,7 +19,7 @@ const NavigationBar = () => {
             <ul className="flex gap-4 cursor-pointer text-black ">
 
               <li>
-                <Link to="/">Shop</Link></li>
+                <Link to="/shop">Shop</Link></li>
                 <li>
                 <Link to="/about">About</Link></li>
                 <li>
