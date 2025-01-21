@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import twst from "../../asset/Logo.png";
 import { RiMenu3Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,10 +6,15 @@ import { openMobileNav } from "../../utils/slice/generalSlice.js";
 import MobilNav from "./MobilNav.jsx";
 import { Dropdown } from "flowbite-react";
 import { Link } from "react-router-dom";
+import Login from "../auth/Login.jsx";
 
 const NavigationBar = () => {
   const dispatch = useDispatch();
   const { openNav } = useSelector((store) => store.general);
+  const [openModal, setOpenModal] = useState(false);
+  console.log(openModal);
+  
+
 
   return (
     <>
@@ -50,10 +55,11 @@ const NavigationBar = () => {
                   
                 </Dropdown>
               </li>
-              <li className="bg-gradient-to-r from-orange-300  to-red-600 bg-clip-text text-transparent">
+              <li className="bg-gradient-to-r from-orange-300  to-red-600 bg-clip-text text-transparent" onClick={()=>setOpenModal(true)}>
                 Login
               </li>
-              <li>Cart</li>
+              <li>
+                <Link to="/cart">Cart</Link></li>
             </ul>
           </div>
 
@@ -66,6 +72,7 @@ const NavigationBar = () => {
         </div>
       </nav>
       {openNav && <MobilNav />}
+      {openModal&&<Login openModal={openModal} setOpenModal={setOpenModal}/>}
     </>
   );
 };

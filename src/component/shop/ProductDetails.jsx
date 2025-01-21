@@ -8,6 +8,7 @@ import Accordion from "./Accordion";
 import ProductQuality from "../product/ProductQuality";
 import FeatureProductSlide from "../carousel/FeatureProductSlide";
 import { categories } from "../../utils/constant/categories";
+import { Browse } from "../../utils/constant/browse";
 
 const ProductDetails = () => {
   //   const { id, name } = useParams();
@@ -15,7 +16,7 @@ const ProductDetails = () => {
   return (
     <>
       <div className="w-full p-6  lg:flex justify-center gap-3">
-        <div className="lg:w-1/2 p-4  grid grid-cols-2 gap-3 h-screen overflow-scroll productPhoto">
+        <div className="w-full lg:w-1/2 p-4  grid grid-cols-2 gap-3  lg:h-screen overflow-scroll productPhoto">
           <img src={men} alt="prod_Photo" height="" />
           <img src={men} alt="prod_Photo" height="" />
           <img src={men} alt="prod_Photo" height="" />
@@ -100,12 +101,27 @@ const ProductDetails = () => {
       </div>
       <ProductQuality />
 
-      <FeatureProductSlide text="You may also like" items={categories}/>
-     
-      <div className="w-full p-8 bg-secondary">
-      <FeatureProductSlide text="More from the collection" items={categories}/> 
-      </div> 
-     
+      <FeatureProductSlide text="You may also like" items={categories} />
+
+      <div className="w-full p-4 lg:p-8 bg-secondary">
+        <FeatureProductSlide
+          text="More from the collection"
+          items={categories}
+        />
+      </div>
+      <div className="w-full p-6">
+        <p>Browse More</p>
+        <div className="flex  gap-3 flex-wrap">
+          {Browse.map((item) => (
+            <button
+              key={item?.id}
+              className="py-2 px-4 rounded-md border border-black text-sm sm:text-base w-auto sm:w-auto hover:bg-gray-400 hover:text-white"
+            >
+              {item?.name}
+            </button>
+          ))}
+        </div>
+      </div>
     </>
   );
 };
