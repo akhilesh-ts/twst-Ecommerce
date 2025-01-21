@@ -23,7 +23,7 @@ const responsive = {
 };
 
 const ProductSlide = ({ text, items, slider }) => {
-  console.log(items);
+  
 
   return (
     <>
